@@ -1,45 +1,39 @@
-/* Importación de fuentes */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
 
-/* Variables */
-:root {
-	--color-text: #15163d;
-	--color-background: radial-gradient(
-		circle at -221px -324px,
-		#5974ff,
-		white 40%
-	);
-	--color-button-background: #04146c;
-}
-
-/* Estilos generales */
 * {
 	box-sizing: border-box;
+	padding: 0;
+	list-style: none;
+	margin: 0;
 }
 
 body {
 	font-family: "Inter", sans-serif;
-	font-size: 16px; /* Tamaño de fuente base */
-	color: var(--color-text);
-	line-height: 1.5;
-	background-image: var(--color-background);
+	color: #15163d;
+	line-height: 27.5px;
+	background-image: radial-gradient(
+		circle at -221px -324px,
+		#5974ff,
+		white 40%
+	);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
-/* Contenedor principal */
 main,
 header,
 nav,
+main,
 footer {
 	width: 83.33%;
 	margin: auto;
 }
 
-/* Flexbox para elementos principales */
 header,
 section,
 nav,
+nav div,
+footer,
 footer {
 	display: flex;
 	justify-content: space-between;
@@ -52,30 +46,40 @@ nav div {
 	justify-content: space-evenly;
 }
 
+section,
+header {
+	margin-bottom: 100px;
+}
+
+section p,
+header p {
+	font-weight: 300;
+}
+
+p,
+ul,
+header a,
+section a {
+	font-size: 1rem;
+}
+
 section div,
 header div {
 	width: 50%;
 }
 
-/* Tamaños de texto y párrafos */
-section p,
-header p,
-p,
-ul {
-	font-size: 1rem;
-}
-
-/* Estilos específicos para elementos */
 .cuarenta {
 	width: 40%;
 }
 
-nav a,
-header a,
-section a {
+nav a {
 	text-decoration: none;
 	font-size: 16px;
-	color: var(--color-text);
+	color: #15163d;
+}
+
+nav a:hover {
+	text-decoration: underline;
 }
 
 main img,
@@ -83,67 +87,152 @@ header img {
 	width: 100%;
 }
 
-/* Estilos para títulos */
 h1,
-h2,
-h3 {
+h2 {
 	font-size: 3.68em;
-	line-height: 1;
-	text-transform: capitalize;
+	line-height: 100%;
 }
 
-/* Estilos para enlaces y botones */
+ul,
+h1,
+h2,
+h3,
+h2,
+p,
+ul {
+	text-transform: capitalize;
+	margin-bottom: 42px;
+}
+
 header a,
 section a {
-	font-size: 1rem;
 	color: white;
 	text-decoration: none;
 	width: 37.5%;
 	padding: 1rem;
 	line-height: 1rem;
-	background-color: var(--color-button-background);
+	background-color: #04146c;
 	display: block;
 	text-transform: uppercase;
 	text-align: center;
 	border-radius: 8px;
+	margin-top: 42px;
+}
+footer {
+	justify-content: flex-start;
+	align-items: flex-start;
+	background-color: #15163d;
+	width: 100%;
+	color: white;
+	padding: 68px 0 68px 8.33%;
+}
+footer ul {
+	width: 16.66%;
+	font-weight: 300;
 }
 
-/* Media query para pantallas menores a 768px */
+footer li {
+	margin-bottom: 40px;
+}
+footer ul li:first-child {
+	font-size: 1.12rem;
+	font-weight: 700;
+}
+footer p {
+	width: 100%;
+	text-align: center;
+	font-weight: 300;
+}
+section:nth-child(3) h4,
+section:nth-child(3) h2 {
+	width: 100%;
+	text-align: center;
+}
+section:nth-child(3) h2 {
+	margin-bottom: 82px;
+}
+section:nth-child(3) h3 {
+	font-weight: 400;
+	line-height: 27.5px;
+	font-size: 1.12rem;
+	margin-bottom: 0;
+}
+section:nth-child(3) p {
+	line-height: 130%;
+}
+section:nth-child(3) h4 {
+	margin-bottom: 29px;
+	font-size: 1rem;
+}
+section:nth-child(3) img {
+	width: 150px;
+	height: 150px;
+	border-radius: 100px;
+	object-fit: cover;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+section:nth-child(3) div {
+	padding: 1.42rem 3.31rem;
+	width: 30%;
+	background-color: #eff2ff;
+	border-radius: 20px;
+	text-align: center;
+}
+
 @media (max-width: 768px) {
 	body {
-		font-size: 68.9%; /* Reducción del tamaño de fuente */
+		font-size: 68.9%;
 	}
 
-	/* Flexbox en columna para elementos principales */
 	main,
 	header,
 	nav,
+	main,
 	footer,
+	footer ul,
 	nav div,
 	.cuarenta,
 	section div,
 	header div {
 		flex-direction: column;
 		width: 100%;
-		align-items: center;
+		align-items: center !important;
 		text-align: center;
 	}
 
-	/* Ajustes para enlaces y elementos específicos */
 	header a,
 	section a,
 	h1,
-	h2,
-	p {
+	h2 {
 		width: 50%;
-		margin: auto;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	nav img {
 		width: 8.33%;
 	}
-
 	.cuarenta {
-		order: -1; /* Cambio de orden */
+		order: -1;
+	}
+	section:nth-child(3) div {
+		padding: 1.75rem;
+		width: 83.33%;
+		margin: auto;
+		margin-bottom: 42px;
+	}
+	section:nth-child(4) {
+		display: none;
+	}
+	nav div:nth-child(2) {
+		display: none;
+	}
+	nav {
+		margin-bottom: 124px;
+	}
+
+	footer ul:nth-child(2) {
+		order: -1;
 	}
 }
