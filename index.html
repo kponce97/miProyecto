@@ -5,26 +5,36 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Proyecto Integrador</title>
+
 		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/estilos.css" />
 	</head>
 
 	<body>
+		<div id="modal">
+			<span class="icon-cerrar" onclick="cerrarModal();">CERRAR</span>
+
+			<p>Envianos un correo a <a href="mailto:mailto@info.com">mailTo</a></p>
+		</div>
 		<nav>
 			<div>
 				<img src="imagenes/AD.png" alt="" />
 			</div>
-			<a href="#">About</a>
-			<div>
+			<div id="desplegable">
+				<span class="icon-cerrar" onclick="cerrar();"></span>
+				<a href="#">About</a>
 				<a href="#">Testimonios</a>
-				<a href="#">Contacto</a>
+				<a href="#" onclick="abrirModal();">Contacto</a>
 			</div>
+
+			<span class="icon-menu" onclick="abrir();"></span>
 		</nav>
 		<header>
 			<div class="cuarenta">
 				<h1>Creando Experencia y Marca</h1>
 
 				<p>Agencia Digital al servicio del cliente y de su marca.</p>
-				<a href="#">contactános</a>
+				<a href="#" onclick="abrirModal();">contactános</a>
 			</div>
 			<div>
 				<img src="imagenes/img1.png" alt="" />
@@ -93,7 +103,7 @@
 					<h2>Formá parte de nuestro equipo</h2>
 					<p>visitá nuestro perfil de LinkedIn</p>
 
-					<a href="#">contactános</a>
+					<a href="#" onclick="abrirModal();">contactános</a>
 				</div>
 			</section>
 		</main>
@@ -112,5 +122,7 @@
 			</ul>
 			<p>@Todos los derechos reservados</p>
 		</footer>
+
+		<script src="js/codigo.js"></script>
 	</body>
 </html>
